@@ -580,4 +580,3 @@ cv.best_score_
 cv.score(x_test , y_test)
 
 
-hi
