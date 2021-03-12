@@ -171,94 +171,34 @@ x=pca.fit_transform(x)
 
 # KNN
 
-
-# In[ ]:
-
-
 from sklearn.neighbors import KNeighborsClassifier
-
-
-# In[ ]:
-
 
 knn=KNeighborsClassifier()
 
-
-# In[ ]:
-
-
 # n_neighbors=?
-
-
-# In[ ]:
-
 
 # train_test_split
 
-
-# In[ ]:
-
-
 from sklearn.model_selection import train_test_split
-
-
-# In[ ]:
-
 
 x_train , x_test , y_train , y_test=train_test_split(x , y , test_size=0.3 , random_state=2 , stratify=y  )
 
-
-# In[ ]:
-
-
 # GridSearchCV
-
-
-# In[ ]:
-
 
 from sklearn.model_selection import GridSearchCV
 
-
-# In[ ]:
-
-
 param_grid={"n_neighbors":np.arange(1 , 31)}
-
-
-# In[ ]:
-
 
 cv=GridSearchCV(knn ,param_grid , cv=10)
 cv
 
-
-# In[ ]:
-
-
 cv.fit(x_train , y_train)
-
-
-# In[ ]:
-
 
 cv.best_params_
 
-
-# In[ ]:
-
-
 cv.best_score_
 
-
-# In[ ]:
-
-
 # test score
-
-
-# In[ ]:
-
 
 cv.score(x_test , y_test)
 
