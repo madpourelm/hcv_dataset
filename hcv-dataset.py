@@ -16,116 +16,44 @@ hcv.tail(10)
 
 hcv.duplicated().sum()
 
-
-# In[ ]:
-
-
 # Missing values
-
-
-# In[ ]:
-
 
 hcv.info()
 
-
-# In[ ]:
-
-
 hcv.isnull().sum()
-
-
-# In[ ]:
-
 
 # first method
 
-
-# In[ ]:
-
-
 # Example : "ALP"
 
-
-# In[ ]:
-
-
 import matplotlib.pyplot as plt
-
-
-# In[ ]:
-
 
 plt.plot(hcv.ALP.loc[0:25].index , hcv.ALP.loc[0:25].values)
 plt.show()
 
-
-# In[ ]:
-
-
 plt.hist(hcv.ALP)
 plt.show()
 
-
-# In[ ]:
-
-
 hcv.ALP.describe()
-
-
-# In[ ]:
-
 
 IQR_ALP=80.1-52.5
 IQR_ALP
 
-
-# In[ ]:
-
-
 upper_extreme=80.1+(1.5 * IQR_ALP)
 upper_extreme
-
-
-# In[ ]:
-
 
 lower_extreme=52.5-(1.5 * IQR_ALP)
 lower_extreme
 
-
-# In[ ]:
-
-
 (hcv.ALP[hcv.ALP>121.49999999999999]).sort_values()
-
-
-# In[ ]:
-
 
 hcv.ALP[hcv.ALP<11.100000000000009]
 
-
-# In[ ]:
-
-
 hcv.drop({539 ,606 , 610 } ,  axis=0 , inplace=True )
-
-
-# In[ ]:
-
 
 plt.hist(hcv.ALP);
 
-
-# In[ ]:
-
-
 hcv.shape
-
-
-# In[ ]:
-
 
 # second method
 
