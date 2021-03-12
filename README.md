@@ -4,3 +4,5 @@ hcv dataset for machine learning:
 preprocessing
 
 gridsearchcv(knn)
+
+logisticRegression
