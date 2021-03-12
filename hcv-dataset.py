@@ -109,95 +109,36 @@ outliers=np.array([216 , 536 , 570 , 582 , 592 , 558 , 588 ,
 
 outliers=np.unique(outliers)
 
-
-# In[ ]:
-
-
 # remove outliers
-
-
-# In[ ]:
-
 
 x.drop( outliers , axis=0 , inplace=True)
 
-
-# In[ ]:
-
-
 y.drop(outliers ,inplace=True )
 
-
-# In[ ]:
-
-
 x.shape
-
-
-# In[ ]:
-
 
 y.shape
 
 
-# In[ ]:
-
-
 x.sort_index(ascending=False  , ignore_index=True , sort_remaining=True)
 
-
-# In[ ]:
-
-
 # or more simple
-
-
-# In[ ]:
-
 
 x=pd.DataFrame(x.values , index=np.arange(0 , 590) , columns=x.columns)
 x
 
-
-# In[ ]:
-
-
 # strategy="mean" 
-
-
-# In[ ]:
-
 
 from sklearn.impute import SimpleImputer
 
-
-# In[ ]:
-
-
 imp=SimpleImputer(missing_values=np.nan , strategy="mean" )
 
-
-# In[ ]:
-
-
 imp.fit_transform(x)
-
-
-# In[ ]:
-
 
 x=pd.DataFrame(imp.fit_transform(x) , columns=x.columns)
 x
 
-
-# In[ ]:
-
-
 x.isnull().sum()
-
-
-# In[ ]:
-
 
 # Normalize
 
