@@ -240,118 +240,42 @@ y_test
 
 param_grid={"n_neighbors":np.arange(1 , 31)}
 
-
-# In[ ]:
-
-
 GridSearchCV(knn , param_grid , cv=10 )
-
-
-# In[ ]:
-
 
 cv.best_params_
 
-
-# In[ ]:
-
-
 cv.best_score_
-
-
-# In[ ]:
-
 
 y_pred=cv.predict(x_test)
 y_pred
 
-
-# In[ ]:
-
-
 y_pred=pd.DataFrame(y_pred)
-
-
-# In[ ]:
-
 
 y_pred.replace("0=Blood Donor" , 0 , inplace=True)
 
-
-# In[ ]:
-
-
 y_pred.replace(["3=Cirrhosis" ,"0s=suspect Blood Donor" , "1=Hepatitis" , "2=Fibrosis"], 1 , inplace=True )
-
-
-# In[ ]:
-
 
 y_pred.value_counts()
 
-
-# In[ ]:
-
-
 confusion_matrix(y_test , y_pred)
-
-
-# In[ ]:
-
 
 print(classification_report(y_test , y_pred))
 
-
-# In[ ]:
-
-
 # Normalize
-
-
-# In[ ]:
-
 
 from sklearn.preprocessing import normalize
 
-
-# In[ ]:
-
-
 normalize(confusion_matrix(y_test , y_pred) , norm="l1" , axis=1)
-
-
-# In[ ]:
-
 
 # LogisticRegression
 
-
-# In[ ]:
-
-
 from sklearn.linear_model import LogisticRegression
-
-
-# In[ ]:
-
 
 log=LogisticRegression()
 
-
-# In[ ]:
-
-
 log.fit(x_train , y_train)
 
-
-# In[ ]:
-
-
 log.score(x_test , y_test)
-
-
-# In[ ]:
-
 
 y_predict=log.predict(x_test)
 
