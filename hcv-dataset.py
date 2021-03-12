@@ -119,7 +119,6 @@ x.shape
 
 y.shape
 
-
 x.sort_index(ascending=False  , ignore_index=True , sort_remaining=True)
 
 # or more simple
@@ -142,89 +141,33 @@ x.isnull().sum()
 
 # Normalize
 
-
-# In[ ]:
-
-
 from sklearn.preprocessing import normalize
 
-
-# In[ ]:
-
-
 normalize(x , norm='l1',  axis=1)
-
-
-# In[ ]:
-
 
 x=pd.DataFrame(normalize(x) , columns=x.columns)
 x
 
-
-# In[ ]:
-
-
 # PCA 
-
-
-# In[ ]:
-
 
 from sklearn.decomposition import PCA
 
-
-# In[ ]:
-
-
 pca=PCA()
-
-
-# In[ ]:
-
 
 x=pca.fit_transform(x)
 
-
-# In[ ]:
-
-
 # n_components=?
-
-
-# In[ ]:
-
 
 n=range(pca.n_components_)
 
-
-# In[ ]:
-
-
 v=pca.explained_variance_
-
-
-# In[ ]:
-
 
 plt.bar(n , v)
 plt.xticks(n);
 
-
-# In[ ]:
-
-
 pca=PCA(n_components=10)
 
-
-# In[ ]:
-
-
 x=pca.fit_transform(x)
-
-
-# In[ ]:
-
 
 # KNN
 
