@@ -280,59 +280,23 @@ log.score(x_test , y_test)
 y_predict=log.predict(x_test)
 
 
-# In[ ]:
-
-
 from sklearn.metrics import confusion_matrix , classification_report
-
-
-# In[ ]:
-
 
 confusion_matrix(y_test , y_pred)
 
-
-# In[ ]:
-
-
 print(classification_report(y_test , y_pred))
-
-
-# In[ ]:
-
 
 from sklearn.metrics import roc_curve
 
-
-# In[ ]:
-
-
 y_pred_prob=log.predict_proba(x_test)[: , 1]
 
-
-# In[ ]:
-
-
 fpr , tpr , thresholds=roc_curve(y_test , y_pred_prob  )
-
-
-# In[ ]:
-
 
 plt.plot(fpr , tpr)
 plt.plot([0 , 1] , [0 , 1] , "--")
 plt.xlabel("fpr")
 plt.ylabel("tpr");
 
-
-# In[ ]:
-
-
 from sklearn.metrics import roc_auc_score
 
-
-# In[ ]:
-
-
 roc_auc_score(y_test , y_pred_prob)
-
