@@ -84,72 +84,28 @@ x.describe()
 
 from sklearn.preprocessing import scale
 
-
-# In[ ]:
-
-
 scale(x)
-
-
-# In[ ]:
-
 
 x1=pd.DataFrame(scale(x) , index=x.index , columns=x.columns)
 x1
 
-
-# In[ ]:
-
-
 x1.boxplot(figsize=(9 ,5));
-
-
-# In[ ]:
-
 
 x1.values[x1.values>5]
 
-
-# In[ ]:
-
-
 x1.values[x1.values<-5]
-
-
-# In[ ]:
-
 
 x1[x1>5].notnull().sum()
 
-
-# In[ ]:
-
-
 x1[x1<-5].notnull().sum()
-
-
-# In[ ]:
-
 
 x1.loc[:][x1.values>5].index
 
-
-# In[ ]:
-
-
 x1.loc[:][x1.values<-5].index
-
-
-# In[ ]:
-
 
 outliers=np.array([216 , 536 , 570 , 582 , 592 , 558 , 588 ,
               595 , 609 , 587 , 590 , 597 , 600 , 601 , 
               605 , 586 , 591 , 533 , 558 , 559 , 593 , 602 , 535])
-
-
-# In[ ]:
-
 
 outliers=np.unique(outliers)
 
