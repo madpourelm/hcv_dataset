@@ -5,34 +5,14 @@ import pandas as pd
 hcv=pd.read_csv("/Users/habibe/Desktop/Machine learning/Dataset/csv/hcvdat0-1.csv")
 hcv
 
-
-# In[ ]:
-
-
 hcv.drop("Unnamed: 0" , axis=1 , inplace=True)
 hcv
 
-
-# In[ ]:
-
-
 hcv.head(10)
-
-
-# In[ ]:
-
 
 hcv.tail(10)
 
-
-# In[ ]:
-
-
 # duplicates
-
-
-# In[ ]:
-
 
 hcv.duplicated().sum()
 
