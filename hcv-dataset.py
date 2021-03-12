@@ -57,78 +57,30 @@ hcv.shape
 
 # second method
 
-
-# In[ ]:
-
-
 # pairplot 
 
-
-# In[ ]:
-
-
 import seaborn as sb
-
-
-# In[ ]:
-
 
 sb.pairplot(hcv)
 plt.show()
 
-
-# In[ ]:
-
-
 # Standardization
-
-
-# In[ ]:
-
 
 # get_dumies
 
-
-# In[ ]:
-
-
 # y , x
 
-
-# In[ ]:
-
-
 y=hcv.Category
-
-
-# In[ ]:
-
 
 x=hcv.loc[ : , (hcv.columns!="Category")]
 x
 
-
-# In[ ]:
-
-
 x=pd.get_dummies(x)
 x
 
-
-# In[ ]:
-
-
 x.describe()
 
-
-# In[ ]:
-
-
 # Standardization
-
-
-# In[ ]:
-
 
 from sklearn.preprocessing import scale
 
