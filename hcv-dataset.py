@@ -202,117 +202,41 @@ cv.best_score_
 
 cv.score(x_test , y_test)
 
-
-# In[ ]:
-
-
 # targets in hcv dataset are not balanced
-
-
-# In[ ]:
-
 
 from sklearn.metrics import confusion_matrix , classification_report
 
-
-# In[ ]:
-
-
 y_pred=cv.predict(x_test)
-
-
-# In[ ]:
-
 
 confusion_matrix(y_test , y_pred)
 
-
-# In[ ]:
-
-
 print(classification_report(y_test , y_pred))
-
-
-# In[ ]:
-
 
 from sklearn.preprocessing import normalize
 
-
-# In[ ]:
-
-
 normalize(confusion_matrix(y_test , y_pred) , norm='l1' , axis=1 )
 
-
-# In[ ]:
-
-
 y.value_counts()
-
-
-# In[ ]:
-
 
 y.replace("0=Blood Donor" , 0 , inplace=True)
 
-
-# In[ ]:
-
-
 y.replace(["3=Cirrhosis" ,"0s=suspect Blood Donor" , "1=Hepatitis" , "2=Fibrosis"] , 1 , inplace=True )
 
-
-# In[ ]:
-
-
 # change sample
-
-
-# In[ ]:
-
 
 y.loc[534]
 
-
-# In[ ]:
-
-
 y.value_counts()
-
-
-# In[ ]:
-
 
 x_train , x_test , y_train , y_test=train_test_split(x , y , test_size=0.3 , random_state=2 , stratify=y  )
 
-
-# In[ ]:
-
-
 knn=KNeighborsClassifier()
-
-
-# In[ ]:
-
 
 # change sample
 
-
-# In[ ]:
-
-
 y_test
 
-
-# In[ ]:
-
-
 # GridSearchCV
-
-
-# In[ ]:
-
 
 param_grid={"n_neighbors":np.arange(1 , 31)}
 
